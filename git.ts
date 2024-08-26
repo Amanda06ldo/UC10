@@ -5,10 +5,10 @@ class Repositorio{
     branch: Array<any> = []
     historico: Array<any> = []  
          index(): boolean{
-        let verificacao = reader.question('quer adicionar o arquivo? Sim ou Nao')
-        if(verificacao.toLowerCase() == 'sim'){
+        let verificar = reader.question('quer adicionar o arquivo? Sim ou Nao')
+        if(verificar.toLowerCase() == 'sim'){
             return true
-        }else if(verificacao.toLowerCase() == 'nao'){
+        }else if(verificar.toLowerCase() == 'nao'){
             return false
         }else{
             throw new Error('precisa responder algo')
@@ -54,13 +54,13 @@ class Repositorio{
         
         console.log(this.commit);
         
-        let escolha = reader.questionINT("Digite o número do arquivo que quer modificar:")
-        let frase = reader.question('Quer modificar o que?')
-        this.commit[escolha - 1] = frase
+        let pergunta = reader.questionINT("Digite o número do arquivo que quer modificar:")
+        let mudar = reader.question('Quer modificar o que?')
+        this.commit[pergunta - 1] = mudar
     }
     getBlod(): void{
-        let escolha = reader.question('Qual  o blob você quer olhar?')
-        console.log(this.commit[escolha - 1])
+        let pergunta = reader.question('Qual  o blob você quer olhar?')
+        console.log(this.commit[pergunta - 1])
     } 
     getCommit(): void{
         console.log(this.commit);        

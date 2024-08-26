@@ -6,11 +6,11 @@ var Repositorio = /** @class */ (function () {
         this.historico = [];
     }
     Repositorio.prototype.index = function () {
-        var verificacao = reader.question('quer adicionar o arquivo? Sim ou Nao');
-        if (verificacao.toLowerCase() == 'sim') {
+        var verificar = reader.question('quer adicionar o arquivo? Sim ou Nao');
+        if (verificar.toLowerCase() == 'sim') {
             return true;
         }
-        else if (verificacao.toLowerCase() == 'nao') {
+        else if (verificar.toLowerCase() == 'nao') {
             return false;
         }
         else {
@@ -47,13 +47,13 @@ var Repositorio = /** @class */ (function () {
     };
     Repositorio.prototype.setBlob = function () {
         console.log(this.commit);
-        var escolha = reader.questionINT("Digite o número do arquivo que quer modificar:");
-        var frase = reader.question('Quer modificar o que?');
-        this.commit[escolha - 1] = frase;
+        var pergunta = reader.questionINT("Digite o número do arquivo que quer modificar:");
+        var mudar = reader.question('Quer modificar o que?');
+        this.commit[pergunta - 1] = mudar;
     };
     Repositorio.prototype.getBlod = function () {
-        var escolha = reader.question('Qual  o blob você quer olhar?');
-        console.log(this.commit[escolha - 1]);
+        var pergunta = reader.question('Qual  o blob você quer olhar?');
+        console.log(this.commit[pergunta - 1]);
     };
     Repositorio.prototype.getCommit = function () {
         console.log(this.commit);
