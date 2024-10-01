@@ -1,6 +1,6 @@
 var reader = require("readline-sync")
 
-class branch {
+export class branch {
     public nome: string
     public dataCriacao:Date
     public commits: Array<string> = []
@@ -31,32 +31,32 @@ class branch {
     }
 }
 
-class branchMaster extends branch {
+export class branchMaster extends branch {
     criarNovaBranch(nome:string,dataCriacao:Date):branch{
         let newBranch = new branch(nome,dataCriacao)
         return newBranch
     }
 } 
 
-class branchDevelop extends branch{
+export class branchDevelop extends branch{
     finalizarSprint(branchRelease:branchRelease):void{
     this.merge(branchRelease)
     }
 }
 
-class branchHotfix extends branch{
+export class branchHotfix extends branch{
     corrigirBug(descricao:string):void{
     this.commits.push(descricao)
     }
 }
 
-class branchFeature extends branch{
+export class branchFeature extends branch{
     implementarFuncionalidade(descricao:string):void{
     this.commits.push(descricao)
     }
 }
 
-class branchRelease extends branch{
+export class branchRelease extends branch{
     promoverParaProducao():void{
         console.log(`
         A branch nova ficou assim: 
